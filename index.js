@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const debug = require('debug')('app:main');
 const config = require('config');
 
-const router = require('./src/routes');
+const router = require('./src/routes/index');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
