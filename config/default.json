@@ -2,5 +2,6 @@
   "name": "auth project",
   "db": {
     "address": "mongodb://localhost:27017/authproject"
-  }
+  },
+  "jwt_key": "asdfdsSGgfasd345FD99sksksjASFDöajsfDF"
 } 
