@@ -17,6 +17,11 @@ async function isLoggedIn(req, res, next){
   
 }
 
+async function isAdmin(req, res, next){
+  if(!req.user.isadmin) return res.status(403).send('access denied.');
+  next();
+}
 module.exports = {
-  isLoggedIn
+  isLoggedIn,
+  isAdmin
 }
