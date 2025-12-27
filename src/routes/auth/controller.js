@@ -27,7 +27,7 @@ module.exports = new (class extends controller {
   }
 
   async login(req, res){
-    const user = await this.User.findOne({email: req.body.email});
+     const user = await this.User.findOne({email: req.body.email});
     if(!user){
       return this.response({
         res, code: 400, message: 'invalid email or password'
@@ -45,4 +45,4 @@ module.exports = new (class extends controller {
       data: {token}
     });
   }
-})();
+})(); 
