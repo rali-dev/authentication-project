@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const debug = require('debug')('app:main');
 const config = require('config');
+const winston = require('winston');
 
 const router = require('./src/routes/index');
 
@@ -16,6 +17,8 @@ mongoose
   .connect(config.get('db.address'))
   .then(() => debug('Connected to MongoDB...'))
   .catch((err) => debug('Could not connect to MongoDB...', err));
+
+winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 app.use('/api', router);
 
